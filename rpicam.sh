@@ -16,12 +16,23 @@ echo $temp4
 
 while [ 1 -eq 1 ]
 do
-	tempTime=`date +%s`
-	checkTime=$((tempTime % 3600))
+	timeSec=`date +%s`
+	checkTime=$((timeSec % 3600))
 	if [ $checkTime -eq 0 ]; then
+		formatTime=`date +"%Y%m%d_%H%M"`
+		fileName="$formatTime.h264"
 		echo "It's of the hour"
+
+		timeDay==`date +"%Y%m%d"`
 		exit 0
+
+		# raspivid -n -w 1280 -h 720 -o - | ffmpeg
+		# sudo apt-get install -y gpac
+		# MP4Box -fps 30 -add myvid.h264 myvid.mp4
+		sleep 3540
 	else
-		sleep 1
+		sleep 0.9
+		fileName="$formatTime.h264"
+		echo $fileName
 	fi
 done
