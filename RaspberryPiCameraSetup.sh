@@ -19,3 +19,5 @@ apt-get install crtmpserver
 # seekGranularity=0.1
 # clientSideBuffer=30
 service crtmpserver restart
+
+sudo apt-get install -y gpac
